@@ -7,6 +7,16 @@ struct BeerView: View {
 	let greet = Greeting().greet()
 
 	var body: some View {
+        VStack {
+            Text(store.suspendResult ?? "")
+            Button("suspend") {
+                store.send(BeerFeature.Action.suspendTapped)
+            }
+            Text(store.flowResult ?? "")
+            Button("flow") {
+                store.send(BeerFeature.Action.flowTapped)
+            }
+        }
 		Text(greet)
 	}
 }
