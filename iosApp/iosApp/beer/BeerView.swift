@@ -16,6 +16,14 @@ struct BeerView: View {
             Button("flow") {
                 store.send(BeerFeature.Action.flowTapped)
             }
+            Text(store.nestResult?.inSample.test ?? "")
+            Button("nest") {
+                store.send(BeerFeature.Action.nestTapped)
+            }
+            Text(store.combineResult?.sample.inSample.test ?? "")
+            Button("combine") {
+                store.send(BeerFeature.Action.combineTapped)
+            }
         }
 		Text(greet)
 	}
