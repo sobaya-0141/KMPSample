@@ -32,7 +32,8 @@ struct BeerView: View {
 struct BeerView_Previews: PreviewProvider {
 	static var previews: some View {
         BeerView(
-            store: Store(initialState: BeerFeature.State()) {
+            store: Store(
+                initialState: BeerFeature.State()) {
                 BeerFeature()
             }
         )

@@ -32,16 +32,16 @@ struct BeerFeature: Reducer {
                     await send(.combineReceived(combine))
                 }
             }
-        case .suspendReceived(var response):
+        case .suspendReceived(let response):
             state.suspendResult = response
             return .none
-        case .flowReceived(var response):
+        case .flowReceived(let response):
             state.flowResult = response
             return .none
-        case .nestReceived(var response):
+        case .nestReceived(let response):
             state.nestResult = response
             return .none
-        case .combineReceived(var response):
+        case .combineReceived(let response):
             state.combineResult = response
             return .none
         }
